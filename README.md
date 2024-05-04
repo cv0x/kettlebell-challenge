@@ -1,2 +1,2 @@
-# 10k-kettlebell-swing-challenge
+# kettlebell-challenge
 10k kettlebell swing challenge tracker

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 export default function Register() {
     const [data, setData] = useState({
@@ -11,6 +12,7 @@ export default function Register() {
         e.preventDeffault()       
     }
   return (
+
     <div className='bg-gray-200'>
         <form onSubmit={registerUser}>
             <label>Name </label>

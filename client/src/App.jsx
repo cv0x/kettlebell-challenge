@@ -6,6 +6,7 @@ import Register from "../src/pages/Register";
 import Dashboard from "../src/pages/Dashboard";
 import axios from "axios";
 import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/clerk-react";
+import {Toaster} from "react-hot-toast"
 
 axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = true;
@@ -16,6 +17,7 @@ export default function App() {
   return (
     <>
     <Navbar/>
+    <Toaster position="bottom-right" toastOptions={{duration: 3000}}/>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />

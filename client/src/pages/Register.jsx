@@ -21,7 +21,7 @@ export default function Register() {
                 toast.error(data.error)
             } else {
                 setData({})
-                toast.success("User created")
+                toast.success('User created')
                 navigate('/login')
             }
         } catch (error) {
@@ -31,8 +31,8 @@ export default function Register() {
     }
   return (
 
-    <div className='bg-gray-200'>
-        <form onSubmit={registerUser}>
+    <div className='bg-gray-200 '>
+        <form onSubmit={registerUser} className="flex flex-col bg-blue-600 ">
             <label>Name </label>
             <input type="text" placeholder='Name' value={data.name} onChange={(e) => setData({...data, name: e.target.value})}/>
             <label>Email </label>

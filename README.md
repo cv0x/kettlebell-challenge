@@ -1,2 +1,2 @@
 # kettlebell-challenge
-10k kettlebell swing challenge tracker
+kettlebell challenge app

@@ -13,7 +13,7 @@ export default function Register() {
     })
 
     const registerUser = async(e) => {
-        e.preventDeffault();
+        e.preventDefault();
         const { name, email, password } = data 
         try {
             const {data}= await axios.post('/register', { name, email, password })

@@ -7,6 +7,7 @@ import Dashboard from "../src/pages/Dashboard";
 import axios from "axios";
 import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/clerk-react";
 import {Toaster} from "react-hot-toast"
+import { UserContextProvider } from "../context/userContext";
 
 axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = true;
@@ -15,24 +16,17 @@ axios.defaults.withCredentials = true;
 
 export default function App() {
   return (
-    <>
-    <Navbar/>
-    <Toaster position="bottom-center" toastOptions={{duration: 3000}}/>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/dashboard" element={<>
-        <SignedIn>
-          <Dashboard />
-        </SignedIn>
 
-        <SignedOut>
-          <RedirectToSignIn />
-        </SignedOut>
-      </>} />
+    <UserContextProvider>
+      <Navbar/>
+      <Toaster position="bottom-center" toastOptions={{duration: 3000}}/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
 
-    </Routes>
-    </>
+      </Routes>
+    </UserContextProvider>
   )
 }

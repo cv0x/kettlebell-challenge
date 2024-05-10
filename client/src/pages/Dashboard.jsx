@@ -1,15 +1,15 @@
 import { UserButton } from '@clerk/clerk-react'
 import { useClerk } from "@clerk/clerk-react";
-import React from 'react'
+import { useContext } from "react";
+import { UserContext } from '../../context/userContext';
 
 const Dashboard = () => {
-    const { user } = useClerk();
+    const { user } = useContext(UserContext);
     
     return (
         <div>
             <h1>Dashboard</h1>
-            <h2>Welcome {user.fullName}</h2>
-            <UserButton />
+            {!!user && (<h2> Welcome {user.name} !</h2>)}
         </div>
     )
 }
